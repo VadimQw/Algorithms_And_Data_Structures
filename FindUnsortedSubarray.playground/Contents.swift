@@ -11,9 +11,9 @@ let therdArray      = [6, 4, 10, 10, 4, 15]
 
 func findUnsortedSubarray<T: Comparable>(in array: [T]) -> Int {
     
-    let lastIndex = array.count - 1
+    let endIndex = array.endIndex - 1
     var subarrayIndexes = (start: 1, end: 0)
-    var bounds = (min: array[lastIndex], max: array[0])
+    var bounds = (min: array[endIndex], max: array[0])
     
     for (index, value) in array.enumerated() {
         bounds.max = max(bounds.max, value)
@@ -22,7 +22,7 @@ func findUnsortedSubarray<T: Comparable>(in array: [T]) -> Int {
     
     for (index, value) in array.reversed().enumerated() {
         bounds.min = min(bounds.min, value)
-        if value > bounds.min { subarrayIndexes.start = (lastIndex - index) }
+        if value > bounds.min { subarrayIndexes.start = (endIndex - index) }
     }
     
     return (subarrayIndexes.end - subarrayIndexes.start + 1)

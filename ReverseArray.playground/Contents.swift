@@ -11,11 +11,11 @@ var therdString: [Character]    = ["s", "o", "m", "e", " ", "1", "2", "3"]
 
 func reverseArray<T>(_ array: inout [T]) {
     
-    let lastIndex = array.count - 1
-    let bound = Int(lastIndex / 2)
+    let endIndex = array.endIndex - 1
+    let bound = Int(endIndex / 2)
     
     for index in 0...bound {
-        let reversedIndex = lastIndex - index
+        let reversedIndex = endIndex - index
         (array[index], array[reversedIndex]) = (array[reversedIndex], array[index])
     }
 }
