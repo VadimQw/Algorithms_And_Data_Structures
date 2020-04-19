@@ -2,22 +2,22 @@
 let array = [1, 5, 8, 20, 104, 999, 3, 7]
 let target = 111
 
+// answer: 104 + 7 = 111 ([4, 7] || [7, 4])
+
 // -
 
-private func findTwoNumbers<T: Hashable & Numeric>(in array: [T], target: T) -> [Int] {
+func findTwoNumbers<T: Hashable & Numeric>(in array: [T], target: T) -> [Int] {
     
-    var answer = [Int]()
     var cache = [T: Int]()
     
     for (firstIndex, firstValue) in array.enumerated() {
         if let secondIndex = cache[target - firstValue] {
-            answer = [firstIndex, secondIndex]
-            return answer
+            return [firstIndex, secondIndex]
         }
         cache[firstValue] = firstIndex
     }
     
-    return answer
+    return []
 }
 
 // -

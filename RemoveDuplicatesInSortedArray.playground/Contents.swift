@@ -1,9 +1,11 @@
 
 var array = [0, 0, 1, 1, 3, 4, 4, 4, 5, 5, 8]
 
+// answer: 6 ([0, 1, 3, 4, 5, 8])
+
 // -
 
-private func removeDuplicates<T: Equatable>(in array: inout [T]) -> Int {
+func removeDuplicates<T: Equatable>(in array: inout [T]) -> Int {
     
     var index = 0
     var lastValue: T?
@@ -22,5 +24,4 @@ private func removeDuplicates<T: Equatable>(in array: inout [T]) -> Int {
 
 // -
 
-print(removeDuplicates(in: &array))
-print(array)
+print(removeDuplicates(in: &array), array)
