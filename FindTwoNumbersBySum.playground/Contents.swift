@@ -6,7 +6,7 @@ let target = 111
 
 // -
 
-func findTwoNumbers<T: Hashable & Numeric>(in array: [T], target: T) -> [Int] {
+func findTwoNumbers<T: Hashable & Numeric>(in array: [T], by target: T) -> [Int] {
     
     var cache = [T: Int]()
     
@@ -22,4 +22,4 @@ func findTwoNumbers<T: Hashable & Numeric>(in array: [T], target: T) -> [Int] {
 
 // -
 
-print(findTwoNumbers(in: array, target: target))
+print(findTwoNumbers(in: array, by: target))
